@@ -233,7 +233,7 @@ bool LtePhyEnb::computationalDroppingNaive() {
     double success = 0.5;
     double er = (float) rand() / RAND_MAX;
 
-    EV << "Acierto si " << success << " <= " << er << endl;
+    EV << "Success if " << success << " <= " << er << endl;
 
     if (er > success) {
         EV << "---------------------------------" << endl;
@@ -242,7 +242,7 @@ bool LtePhyEnb::computationalDroppingNaive() {
         return true;
     } else {
         EV << "---------------------------------" << endl;
-        EV << "TIRAMOS EL PAQUETE POR CPU" << endl;
+        EV << "PACKET DROPPED LACK OF CPU" << endl;
         EV << "---------------------------------" << endl;
         return false;
     }
@@ -344,13 +344,13 @@ bool LtePhyEnb::computationalDropping(double capacity) {
 
     if (ctot > capacity) {
         EV << "---------------------------------" << endl;
-        EV << "NO HAY DESCARTE POR FALTA DE CPU" << endl;
+        EV << "PACKET NOT DISCARDED" << endl;
         EV << "---------------------------------" << endl;
         return true;
     } else {
 
         EV << "---------------------------------" << endl;
-        EV << "TIRAMOS EL PAQUETE POR FALTA DE CPU" << endl;
+        EV << "PACKET DROPPED LACK OF CPU RESOURCES" << endl;
         EV << "---------------------------------" << endl;
         return false;
     }
