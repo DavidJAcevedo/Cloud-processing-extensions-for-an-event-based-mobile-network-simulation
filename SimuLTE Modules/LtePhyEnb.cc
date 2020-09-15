@@ -301,7 +301,6 @@ void snrVectorTBler(TxMode txmode, double tbler, double snrVector_[]) {
 
 double computationalLoad(std::vector<double> sinr,
         TxMode txmode, LteFeedbackComputationRealistic* fb, double snrVector[]) {
-    //Justificar con el paper
     int N_scfdma_symbol_tslot = 7;
     double tot_resources = 12 * N_scfdma_symbol_tslot * 2;
     double kl = 0.2;
@@ -340,7 +339,7 @@ bool LtePhyEnb::computationalDropping(double capacity) {
     emit(capacitySignal, capacity);
     double ctot = 7000;
 
-    EV << "Acierto si " << ctot << " >= capacity:" << capacity << endl;
+EV << "Success if " << success << " <= " << er << endl;
 
     if (ctot > capacity) {
         EV << "---------------------------------" << endl;
